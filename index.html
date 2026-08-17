@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Hi, Vinyl</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+    line-height: 1.6;
+    color: #1c1c1e;
+    background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #f2f2f7; background: #1c1c1e; }
+    a { color: #64d2ff; }
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  .updated { color: #8e8e93; font-size: 0.9rem; margin-bottom: 2rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.2rem; }
+  ul { padding-left: 1.3rem; }
+  a { color: #0a84ff; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Hi, Vinyl</h1>
+<p class="updated">Last updated: August 17, 2026</p>
+
+<p>Hi, Vinyl is an app for keeping track of your vinyl record collection. This policy explains what data the app uses, where it stays, and why.</p>
+
+<h2>No account with us, no database of ours</h2>
+<p>Hi, Vinyl has no account of its own, no login, and no database in which we store your collection. Your collection (artist, title, year, notes, location, tags, cover photos) is stored locally on your device and synced between your own devices through your personal iCloud account (Apple CloudKit, private environment). We (the developer) have no access to that private data and never receive it — that runs entirely through Apple, outside of us. If you delete the app or wipe your iCloud data, your collection is gone too.</p>
+<p>Two features are an exception to this, both only active if you turn them on yourself: collection sharing, and AI photo recognition (Pro). See below.</p>
+
+<h2>Camera and photos</h2>
+<p>The app asks for access to your camera and photo library to photograph or select album covers. These photos are used to:</p>
+<ul>
+  <li>save the cover with your collection (stays local + in your own iCloud);</li>
+  <li>optionally identify an album via automatic image recognition (Pro, see below).</li>
+</ul>
+
+<h2>Collection sharing (optional, off by default)</h2>
+<p>If you turn on the sharing feature yourself, the app publishes a readable copy of your collection (artist, title, year, cover URL, wishlist status) to a shared, public Apple CloudKit environment, tied to a 6-character code that you share with whoever you choose. Anyone with that code can view that data, and — if you allow it — submit suggestions (for example, "this is on my wishlist"). Suggestions only end up in your collection once you approve them yourself. If you turn sharing off again, the published data is deleted. As the developer, we have no separate access channel to this — it runs through the same Apple CloudKit infrastructure, just a public environment instead of a private one.</p>
+
+<h2>AI photo recognition (Pro)</h2>
+<p>Pro subscribers can have an album cover identified via automatic image recognition. This only happens when you actively use this feature:</p>
+<ol>
+  <li>The photo is sent to a server we operate (a Cloudflare Worker), along with an Apple transaction ID.</li>
+  <li>That server first checks with Apple whether you have an active Pro subscription.</li>
+  <li>Only then does the server forward the photo to OpenAI, which analyzes the image and returns the artist and title.</li>
+</ol>
+<p>The photo is not stored by us; it only passes through our server to validate and forward the request. OpenAI processes the photo according to its own privacy policy.</p>
+
+<h2>Third-party services the app calls</h2>
+<p>To look up albums and fetch cover art and tracklists, the app talks to the following external services. This only happens when you perform a search or scan yourself, and only what's needed is sent (for example a search term, barcode, or cover photo) — never your full collection:</p>
+<ul>
+  <li><strong>MusicBrainz / Cover Art Archive</strong> — for looking up albums, cover art, and tracklists by artist/title, barcode, or release group.</li>
+  <li><strong>iTunes / Apple Music</strong> — for looking up albums and cover art, and to link you to an album in the Music app.</li>
+  <li><strong>Discogs</strong> — as an additional source for looking up albums and cover art, using a token bundled with the app.</li>
+  <li><strong>OpenAI</strong> — exclusively for the Pro photo recognition described above, and exclusively via our own server.</li>
+</ul>
+<p>These services have their own privacy policies for the data they process.</p>
+
+<h2>No tracking, no ads</h2>
+<p>Hi, Vinyl contains no advertising, no tracking technology, and no third-party analytics SDKs. Nothing is collected for marketing purposes and nothing is sold on to third parties.</p>
+
+<h2>Children</h2>
+<p>The app is intended for personal/family use and collects no data about children other than what is described above.</p>
+
+<h2>Contact</h2>
+<p>Questions about this privacy policy can be directed to:<br>
+Bas Wonnink — <a href="mailto:baswonnink@gmail.com">baswonnink@gmail.com</a></p>
+
+</body>
+</html>
